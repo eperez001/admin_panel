@@ -1,0 +1,7 @@
+<%= form_for @instructor  do |f| %>  
+    <%= f.label :user_id %>
+    <%= f.number_field :user_id %>
+    <%= f.label :cohort_id %>
+    <%= f.text_field :cohort_id %>
+    <%= f.submit %>
+<% end %>

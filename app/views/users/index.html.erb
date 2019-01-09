@@ -1,0 +1,77 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Welcome, Zee</h1>
+      <div class="home-menu">
+        <div class="row">
+
+        <a class="nav-link active" href="/users">
+                  <span data-feather="users"></span>
+                  Users <span class="sr-only">(current)</span>
+            </a>
+            <a class="nav-link active" href="/instructors">
+                  <span data-feather="users"></span>
+                  Instructors <span class="sr-only">(current)</span>
+            </a>
+            <a class="nav-link active" href="/students">
+                  <span data-feather="users"></span>
+                  Students <span class="sr-only">(current)</span>
+            </a>
+            <a class="nav-link active" href="/cohorts">
+                  <span data-feather="users"></span>
+                  Cohorts <span class="sr-only">(current)</span>
+            </a>
+            <a class="nav-link" href="/courses">
+                  <span data-feather="file"></span>
+                  Courses
+            </a>
+        </div>
+
+        <div class="home-side">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.</p>
+
+        </div>
+      </div>
+  </div>
+</div>
+
+<!-- Body -->
+
+
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Email</th>
+      <th scope="col">Degree</th>
+      <th scope="col">Role</th>
+      <th scope="col">Edit Info</th>
+      <th scope="col">Delete</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+  	<% @user.each do |user| %>
+    <tr id="user">
+      <th scope="row"><%= user.id %></th>
+      <td><%= user.first_name %></td>
+      <td><%= user.last_name %></td>
+      <td><%= user.email %></td>
+      <td><%= user.degree%></td>
+      <td><%= user.role %></td>
+      <td>
+        <a href="/users/<%= user.id %>/edit">Edit</a></td>
+        <td><%= link_to 'Delete', user_path(user), method: :delete, remote:true, data: { confirm: 'Are you sure?' } %>
+      </td>
+
+
+    </tr>
+    <% end %>
+  </tbody>
+</table>

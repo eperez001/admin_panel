@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pamelaspanel</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+
+
+    <%= stylesheet_link_tag    'https://fonts.googleapis.com/css?family=Monoton', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    '/assets/layoutstyle.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application.js', 'data-turbolinks-track': 'reload' %>
+
+
+  </head>
+
+    <body>
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 ">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/home">ZCODE</a>
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="#">Sign out</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- SIDENAV -->
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="/home">
+                  <span data-feather="home"></span>
+                  Home <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/courses">
+                  <span data-feather="file"></span>
+                  Courses
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/cohorts">
+                  <span data-feather="users"></span>
+                  Cohorts
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/users">
+                  <span data-feather="users"></span>
+                  Users
+                </a>
+              </li>
+               <li class="nav-item">
+                <a class="nav-link" href="/students">
+                  <span data-feather="users"></span>
+                  Students
+                </a>
+              </li>
+              <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 ">
+              <span>Quick Links</span>
+            </h6>
+              <li class="nav-item">
+                <a class="nav-link" href="/cohorts/new">
+                  <span data-feather="file"></span>
+                  New Cohort
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/courses/new">
+                  <span data-feather="file"></span>
+                  New Course
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/users/new">
+                  <span data-feather="file"></span>
+                  New User
+                </a>
+              </li>
+       <!--      <button  type="button" class="btn btn-light btn-sm"><a class="nav-link active" href="/cohorts/new">New Cohort </a></button>
+ -->
+
+            </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+         <!--  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom"> -->
+
+      <%= yield %>
+
+<!-- </div> -->
+</main>
+
+    <%= javascript_include_tag 'https://code.jquery.com/jquery-3.3.1.slim.min.js', 'data-turbolinks-track': 'reload' %>
+     <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js', 'data-turbolinks-track': 'reload' %>
+     <%= javascript_include_tag 'https://unpkg.com/feather-icons/dist/feather.min.js', 'data-turbolinks-track': 'reload' %>
+     <script>
+      feather.replace()
+    </script>
+  </body>
+</html>

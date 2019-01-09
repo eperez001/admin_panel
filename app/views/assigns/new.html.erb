@@ -1,0 +1,21 @@
+
+<% if @user.role == 'Student' %>
+
+   <%= render "shared/student" %>
+<% elsif  @user.role == 'Instructor' %>
+
+   <%= render "shared/instructor" %>
+
+<% else %>
+
+<div class="card">
+  <div class="card-header">
+    Assignments
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Uh oh...wrong user role!</h5>
+    <p class="card-text">Please select an Instructor or a Student.</p>
+<!--     <a href="/users" class="btn btn-primary">Go Back</a> -->
+  </div>
+</div>
+<% end %>

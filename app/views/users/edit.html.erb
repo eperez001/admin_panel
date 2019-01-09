@@ -1,0 +1,22 @@
+<div class="row edit">
+<%= form_for @user, url: user_path, html: { multipart: true } do |f| %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, value: @user.first_name %>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name , value: @user.last_name %>
+    <%= f.label :email %>
+    <%= f.text_field :email, value: @user.email %>
+    <%= f.label :password %>
+    <%= f.text_field :password , value: @user.password %>
+    <%= f.label :age %>
+    <%= f.number_field :page , value: @user.age %>
+    <%= f.label :degree %>
+    <%= f.select :degree, ['HS','Undergrad' ,'Masters','PhD'] %>
+    <%= f.label :role %>
+    <%= f.select :role,['Instructor','Student' ,'Administrator'] %>
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar, value: @user.avatar_file_name %>
+    <%= f.submit %>
+<% end %>
+
+</div>

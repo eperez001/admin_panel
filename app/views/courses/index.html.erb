@@ -1,0 +1,46 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Zee's Dashboard</h1>
+      <div class="home-menu">
+        <div class="row">
+
+        <a class="nav-link active" href="/users">
+                  <span data-feather="users"></span>
+                  Users <span class="sr-only">(current)</span>
+            </a>
+            <a class="nav-link active" href="/instructors">
+                  <span data-feather="users"></span>
+                  Instructors <span class="sr-only">(current)</span>
+            </a>
+            <a class="nav-link active" href="/students">
+                  <span data-feather="users"></span>
+                  Students <span class="sr-only">(current)</span>
+            </a>
+              <a class="nav-link active" href="/cohorts">
+                  <span data-feather="users"></span>
+                  Cohorts <span class="sr-only">(current)</span>
+            </a>
+            <a class="nav-link" href="/courses">
+                  <span data-feather="file"></span>
+                  Courses
+            </a>
+        </div>
+      </div>
+  </div>
+</div>
+
+<!-- Body -->
+
+<div class="row">
+  <% @course.each do |course| %>
+  <div class="card" id="cohort-course-card" style="width: 14rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= course.name %></h5>
+    <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+     <p class="card-text">Total Hours: <%= course.total_hrs %></p>
+    <a href="/courses/<%= course.id %>/edit" class="card-link">Edit</a>
+  </div>
+</div>
+
+<% end %>
+</div>

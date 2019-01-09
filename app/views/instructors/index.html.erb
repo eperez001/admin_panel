@@ -1,0 +1,76 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Zee's Dashboard</h1>
+      <div class="home-menu">
+        <div class="row">
+
+        <a class="nav-link active" href="/users">
+                  <span data-feather="users"></span>
+                  Users <span class="sr-only">(current)</span>
+            </a>
+            <a class="nav-link active" href="/instructors">
+                  <span data-feather="users"></span>
+                  Instructors <span class="sr-only">(current)</span>
+            </a>
+            <a class="nav-link active" href="/students">
+                  <span data-feather="users"></span>
+                  Students <span class="sr-only">(current)</span>
+            </a>
+            <a class="nav-link active" href="/cohorts">
+                  <span data-feather="users"></span>
+                  Cohorts <span class="sr-only">(current)</span>
+            </a>
+            <a class="nav-link" href="/courses">
+                  <span data-feather="file"></span>
+                  Courses
+            </a>
+        </div>
+
+<!--         <div class="home-side">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.</p>
+
+        </div> -->
+
+        <!-- <button type="button" class="btn btn-light"><a href="/users">Users</a></span></button> -->
+      <!-- <button type="button" class="btn btn-light"><a href="/users">Cohorts</a></button> -->
+      </div>
+  </div>
+</div>
+
+<!-- Body -->
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Email</th>
+      <th scope="col">Degree</th>
+      <th scope="col">Role</th>
+      <th scope="col">Profile</th>
+      <th scope="col">Edit Info</th>
+      <th scope="col">Assign Cohort</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<% @instructor.each do |inst| %>
+    <tr>
+      <th scope="row"><%= inst.id %></th>
+      <td><%= inst.first_name %></td>
+      <td><%= inst.last_name %></td>
+      <td><%= inst.email %></td>
+      <td><%= inst.degree%></td>
+      <td><%= inst.role %></td>
+      <td><a href="/instructors/<%= inst.id %>">View</a></td>
+      <td><a href="/users/<%= inst.id %>/edit">Edit</a></td>
+      <td>
+        <a href="/assigns/instructors/<%= inst.id %>">Assign</a>
+        <a href="/assigns/instructors/<%= inst.id %>/edit">Update</a>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

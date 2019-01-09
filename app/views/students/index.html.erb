@@ -1,0 +1,63 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Zee's Dashboard</h1>
+      <div class="home-menu">
+        <div class="row">
+
+        <a class="nav-link active" href="/users">
+                  <span data-feather="users"></span>
+                  Users <span class="sr-only">(current)</span>
+            </a>
+            <a class="nav-link active" href="/instructors">
+                  <span data-feather="users"></span>
+                  Instructors <span class="sr-only">(current)</span>
+            </a>
+            <a class="nav-link active" href="/students">
+                  <span data-feather="users"></span>
+                  Students <span class="sr-only">(current)</span>
+            </a>
+               <a class="nav-link active" href="/cohorts">
+                  <span data-feather="users"></span>
+                  Cohorts <span class="sr-only">(current)</span>
+            </a>
+            <a class="nav-link" href="/courses">
+                  <span data-feather="file"></span>
+                  Courses
+            </a>
+        </div>
+      </div>
+  </div>
+</div>
+
+<!-- Body -->
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Email</th>
+      <th scope="col">Degree</th>
+      <th scope="col">Role</th>
+      <th scope="col">Edit Info</th>
+      <th scope="col">Assign Cohort</th>
+
+    </tr>
+  </thead>
+  <tbody>
+
+  	<% @student.each do |stud| %>
+    <tr>
+      <th scope="row"><%= stud.id %></th>
+      <td><%= stud.first_name %></td>
+      <td><%= stud.last_name %></td>
+      <td><%= stud.email %></td>
+      <td><%= stud.degree%></td>
+      <td><%= stud.role %></td>
+     <td><a href="/users/<%= stud.id %>/edit">Edit</a></td>
+     <td><a href="/assigns/students/<%= stud.id %>">Assign</a> <a href="/assigns/students/<%= stud.id %>/edit">Update</a></td>
+    </tr>
+  <% end %>
+
+  </tbody>
+</table>

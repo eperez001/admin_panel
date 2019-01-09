@@ -1,0 +1,48 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Pupil Code</h1>
+      <div class="home-menu">
+        <div class="row">
+        <a class="nav-link active" href="/users">
+                  <span data-feather="users"></span>
+                  Users <span class="sr-only">(current)</span>
+            </a>
+            <a class="nav-link active" href="/instructors">
+                  <span data-feather="users"></span>
+                  Instructors <span class="sr-only">(current)</span>
+            </a>
+            <a class="nav-link active" href="/students">
+                  <span data-feather="users"></span>
+                  Students <span class="sr-only">(current)</span>
+            </a>
+            <a class="nav-link active" href="/cohorts">
+                  <span data-feather="users"></span>
+                  Cohorts <span class="sr-only">(current)</span>
+            </a>
+            <a class="nav-link" href="/courses">
+                  <span data-feather="file"></span>
+                  Courses
+            </a>
+        </div>
+
+         <!--  <button  type="button" class="btn btn-light btn-sm"><a class="nav-link active" href="/cohorts/new">New Cohort </a></button> -->
+
+    </div>
+  </div>
+</div>
+
+<!-- Body -->
+<div class="row">
+	<% @cohort.each do |cohort| %>
+  <div class="card" id="cohort-course-card" style="width: 14rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= cohort.name %></h5>
+     <p class="card-text">Start: <%= cohort.start %></p>
+    <p class="card-text">Start: <%= cohort.end %></p>
+    <a href="/cohorts/<%= cohort.id %>" class="card-link">Profile</a>
+    <a href="/cohorts/<%= cohort.id %>/edit" class="card-link">Edit</a>
+  </div>
+</div>
+
+<% end %>
+</div>

@@ -1,0 +1,17 @@
+<% if @user.id == @student.user_id %>
+  <%=render "shared/student" %>
+<% elsif @user.id == @instructor.user_id %>
+  <%= render "shared/instructor" %>
+
+  <% else %>
+
+  <div class="card">
+    <div class="card-header">
+      Assignments
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Hmmm something is wrong...</h5>
+        <p class="card-text">If you could please pick and Instructor or Student.</p>
+        </div>
+        </div>
+        <% end %>
