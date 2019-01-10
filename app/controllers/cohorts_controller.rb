@@ -12,12 +12,13 @@ class CohortsController < ApplicationController
 
 	def new
 		@cohort = Cohort.new
-		# @course = Course.all
+
 
 	end
 
 	def create
 		@cohort = Cohort.create(cohort_params)
+		puts @cohort.errors.messages
 		redirect_to '/cohorts'
 	end
 
@@ -40,10 +41,6 @@ class CohortsController < ApplicationController
 
 
 	private
-    # Using a private method to encapsulate the permissible parameters is
-    # just a good pattern since you'll be able to reuse the same permit
-    # list between create and update. Also, you can specialize this method
-    # with per-user checking of permissible attributes.
     def cohort_params
       params.require(:cohort).permit(:name, :start, :end, :course_id)
     end

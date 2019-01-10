@@ -2,13 +2,13 @@ class CoursesController < ApplicationController
 	# layout 'layout'
 
 	def index
-		puts "i am in path /courses"
+		puts "Welcome to /courses"
 		@course = Course.all
 	end
 
 
 	def  show
-		puts "I am in /courses/id route"
+		puts "Welcome to /courses/id route"
 		@course = Course.find(params[:id])
 	end
 

@@ -14,9 +14,7 @@
     <%= f.select :degree, ['HS','Undergrad' ,'Masters','PhD'] %>
     <%= f.label :role %>
     <%= f.select :role,['Instructor','Student' ,'Administrator'] %>
-    <%= f.label :avatar %>
-    <%= f.file_field :avatar, value: @user.avatar_file_name %>
     <%= f.submit %>
 <% end %>
-
 </div>
+<%= link_to 'Delete', course_path(@users), method: :delete %>

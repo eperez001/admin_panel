@@ -8,6 +8,6 @@
     <%= f.label :end %>
     <%= f.date_field :end %>
     <%= f.label :course_id %>
-    <%= f.number_field :end %>
+    <%= f.select "course_id", options_from_collection_for_select(Course.all, "id", "name")%>
     <%= f.submit %>
 <% end %>

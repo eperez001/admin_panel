@@ -1,8 +1,8 @@
 class HomeController < ApplicationController
 
 
-def index
-	puts "hello i am home"
-end
+  def index
+      puts "Welcome Home!"
+  end
 
 end
